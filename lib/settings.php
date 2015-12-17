@@ -1,0 +1,10 @@
+<?php
+define("KALTURA_SERVICE_URL", 'http://www.kaltura.com/');
+define("KALTURA_PARTNER_ID", '1963071');
+define("KALTURA_PARTNER_SERVICE_SECRET", '3bacbb9f438cb5d352cf1f9f36349182');
+define("KALTURA_ADMIN_SERVICE_SECRET", '03346002eab988af36ccb4d4bd3a1e0a');
+define("KALTURA_WP_ADMIN_WIZ", '15333782');
+define("KALTURA_PLAYER_UI_CONFIG", '30852531');
+define("KALTURA_PARTNER_USER", 'newsnet@bta.bg');
+define("CONNECTIONTYPE", 'USER');
+?>

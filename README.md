@@ -4,7 +4,7 @@ Kaltst is a wordpress plug-in witch enables you to embed <a href="http://corp.ka
 It works as well for the <a href="http://corp.kaltura.com/Deployment-Options/Kaltura-Community-Edition">Community Edition</a> and the
 <a href="http://corp.kaltura.com/Deployment-Options/Kaltura-SaaS-Edition">Kaltura SaaS Edition</a>
 
-<table>
+<table class="table table-striped table-hover table-bordered">
   <tr>
     <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/settings.png" width="250px"></td>
     <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/listings.png" width="250px"></td>

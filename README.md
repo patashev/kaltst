@@ -6,8 +6,8 @@ It works as well for the <a href="http://corp.kaltura.com/Deployment-Options/Kal
 
 <table>
   <tr>
-    <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/listings.png"</td>
-    <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/settings.png"</td>
+    <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/listings.png" width="300px"></td>
+    <td><img src="https://github.com/paveltashev/kaltst/blob/master/lib/screen_shots/settings.png" width="300px"></td>
   </tr>
 </table>
 

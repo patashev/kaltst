@@ -33,9 +33,8 @@ function kaltstupload(){
 add_action('kalturauploader_hoock', 'kaltst_init');
 function kaltst_init(){
 ?>
-    <div class="container" style="float: left;">
         <div class="row">
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-hover table-bordered" style="max-width:600px">
                 <form action="<?=do_action('kalturaup_hoock');?>">
                 <tr>
                     <td><label for="name"><h3>Title:</h3></label><textarea rows="2" name = "namevid" id = "namevid" ></textarea></td>
@@ -57,7 +56,6 @@ function kaltst_init(){
                 </form>
             </table>
             <br/>
-        </div>
     </div>
 <?php
 }

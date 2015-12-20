@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2f540693f44c32271ec0255a25f0c5539bd62282
 add_action('kaltst_settings', 'kaltura_settings');
 function kaltura_settings() {
     global $wpdb;
@@ -52,6 +55,7 @@ function kaltura_settings() {
   <?php
 }
 
+<<<<<<< HEAD
 add_action('kaltst_update_settings', 'kaltst_update_settings');
 function kaltst_update_settings() {
 
@@ -80,6 +84,9 @@ $wpdb->update( $table_name, $data, $where, $format, $where_format );
 
 
 function kaltura_insert_settings() {
+=======
+function kaltura_update_settings() {
+>>>>>>> 2f540693f44c32271ec0255a25f0c5539bd62282
   global $wpdb;
   $table_name = $wpdb->prefix . "kaltura_config_settings"; //try not using Uppercase letters or blank spaces when naming db tables
 
@@ -103,7 +110,11 @@ function kaltura_insert_settings() {
                             '%s') //replaced %d with %s - I guess that your description field will hold strings not decimals
     );
   }
+<<<<<<< HEAD
 if( isset($_POST['kaltura_settings_submit']) ) kaltura_insert_settings();
 
 var_dump(kaltst_update_settings());
+=======
+if( isset($_POST['kaltura_settings_submit']) ) kaltura_update_settings();
+>>>>>>> 2f540693f44c32271ec0255a25f0c5539bd62282
 ?>

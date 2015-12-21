@@ -19,7 +19,16 @@
 
 .cat { display: block; padding-left: 15px; text-indent: -15px; text-transform: uppercase;}
 input[type="checkbox"] { padding: 0; margin:4px 2px 0 4px; vertical-align: bottom; position: relative; top: 0px; *overflow: hidden; }
-
+.btn_form_sumbmit{float: right; margin: 17px;}
+.frm_sbumit_right{ float: right; }
+.frm_sbumit_left{ float: left;}
+.tbl_form_sbm{  border: 1px solid #bee2f9; display: none;}
+.row_btn_frm_sbm{ padding-top:20px; }
+.modal-backdrop {  z-index: -1;  }
+.frm_table{ float: left;}
+.mceActionPanel{ padding-top: 20px;}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary { background: #33a6cc; }
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open > .dropdown-toggle.btn-danger { background: #D43F3A; }
 /*---------------------------END ADMIN-------------------------------------*/
 
 

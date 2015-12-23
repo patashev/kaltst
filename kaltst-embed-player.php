@@ -5,7 +5,7 @@ function mh_trip_script( $atts ) {
     $serviceUri = KALTST_SERVICE_URL;
     $partnerr   = KALTST_PARTNER_ID;
     $objectinsertt  = "<script src='".$serviceUri."/p/".$partnerr."/sp/".$partnerr."00/embedIframeJs/uiconf_id/".KALTST_PLAYER_UI_CONFIG."/partner_id/".$partnerr."'></script>
-    <div style='width: 100%;display: inline-block;position: relative;'>
+
     <div id='dummy' style='margin-top: 56.25%;'></div>
 <div id='kaltura_player_1437197987' style='position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;' itemprop='video' itemscope itemtype='http://schema.org/VideoObject'>
 <span itemprop='name' content='URTHBOY - Hellsong'></span>
@@ -14,8 +14,9 @@ function mh_trip_script( $atts ) {
 <span itemprop='thumbnail' content='".$serviceUri."/p/".$partnerr."/sp/".$partnerr."00/thumbnail/entry_id/".MEDIAENDTRY."/version/100000/acv/162'></span>
 <span itemprop='width' content='560'></span>
 <span itemprop='height' content='315'></span>
-</div></div>
+</div>
 <script>
+//<![CDATA[
 kWidget.thumbEmbed({
   'targetId': 'kaltura_player_1437197987',
   'wid': '_".$partnerr."',
@@ -26,6 +27,7 @@ kWidget.thumbEmbed({
   'cache_st': '1437197987',
   'entry_id': '".MEDIAENDTRY."'
 });
+//]]>
 </script>";
     return $objectinsertt;
 }

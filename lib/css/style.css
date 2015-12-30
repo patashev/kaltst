@@ -16,7 +16,7 @@
     background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0); background-color:#468ccf; }
 .myButton:active { position:relative; top:1px; }
 
-
+#frm_code_snipet{display: none;}
 .cat { display: block; padding-left: 15px; text-indent: -15px; text-transform: uppercase;}
 input[type="checkbox"] { padding: 0; margin:4px 2px 0 4px; vertical-align: bottom; position: relative; top: 0px; *overflow: hidden; }
 .btn_form_sumbmit{float: right; margin: 17px;}

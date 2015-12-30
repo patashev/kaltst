@@ -39,6 +39,7 @@ function kaltst_lst() {
                 </thead>
                 <tbody>
             <?php foreach ($objEntry as $mediaEntry) : ?>
+              <script> var KALTURA_MEDIA_ENTRY_ID = '<?=$mediaEntry->id?>';</script>
                 <tr id="<?php echo $mediaEntry->id ?>">
                         <td class="sometest" style="vertical-align:middle; padding: 2%;"><h5 class="blockquote"><?php echo $mediaEntry->id;?></h5></td>
                         <td style="vertical-align:middle;"><h4 class="blockquote" ><?php echo $mediaEntry->categories;?></h4></td>
@@ -59,13 +60,6 @@ function kaltst_lst() {
     </form>
 </div>
 </div>
-<script type="text/javascript">
-   someFunction();
-   function callFunc(elem){
-    document.getElementById("<?php echo $mediaEntry->id ?>").checked = elem.checked;
-   }
-  </script>
-
   <div id='myModal' class='modal fade' role='dialog'>
     <form action="" method="post" id='myModalForm' role="form">
   			<div class="modal-dialog">
@@ -77,27 +71,27 @@ function kaltst_lst() {
   			      	<div class="modal-body" id="modd">
   						<form role="form" id="send_message_form">
   							<div class="callout callout-danger error_message" style="display:none"></div>
-  							<div class="form-group" id="frm_emebed_code">
-                  <div style='width: 100%;display: inline-block;position: relative;'>
-                      <div id='dummy' style='margin-top: 56.25%;'>
-                          <?php echo "<script src='".KALTST_SERVICE_URL."p/".KALTST_PARTNER_ID."/sp/".KALTST_PARTNER_ID."00/embedIframeJs/uiconf_id/".KALTST_PLAYER_UI_CONFIG."/partner_id/".KALTST_PARTNER_ID."'></script>"; ?>
-                          <div id='kaltura_player_1437197987' style='position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;' itemprop='video' itemscope itemtype='http://schema.org/VideoObject'>
-                          </div>
-                  </div>
-                  </div>
-  							</div>
+<div class="form-group" id="frm_emebed_code">
+  <div style='width: 100%;display: inline-block;position: relative;'>
+    <div id='<?=$mediaEntry->id?>' class='frm_id' style='margin-top: 56.25%;'>
+      <?php echo "<script src='".KALTST_SERVICE_URL."p/".KALTST_PARTNER_ID."/sp/".KALTST_PARTNER_ID."00/embedIframeJs/uiconf_id/".KALTST_PLAYER_UI_CONFIG."/partner_id/".KALTST_PARTNER_ID."'></script>"; ?>
+      <div id='kaltura_player_1437197987' style='position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;' itemprop='video' itemscope itemtype='http://schema.org/VideoObject'>
+      </div>
+    </div>
+  </div>
+</div>
   						</form>
               <form role="form" id="frm_code_snipet">
                 <div class="form-group">
+                  <?prettify lang=html linenums=true?>
                   <pre class="prettyprint" id="quine" style="border:4px solid #88c; white-space: pre-wrap;">
                   </pre>
                 </div>
               </form>
   					</div>
   			       	<div class="modal-footer" style="margin-top:0;">
-  			      		<div style="float:left;;font-style:italic;line-height: 34px;"><strong>test:</strong> - <a href="#">advanced</a></div>
+  			      		<div style="float:left;"><button type="button" class="btn btn-default btncopy btn_form_show" id="btncopy">advanced</button></div>
   			      		<div style="float:right">
-                          <button type="button" class="btn btn-default btncopy" id="btn-copy">Copy Embed Code</button>
   						            <button type="button" class="btn btn-danger" onclick="stopVideo()" id="closing" data-dismiss="modal">Cancel</button>
   			     	            <button type="submit" class="btn btn-primary embedbutton" name="embedbutton" id="embedbutton" data-loading-text="Submitting...">Embed In Post</button>
   			     	    </div>
@@ -107,45 +101,27 @@ function kaltst_lst() {
           </form>
   		</div>
 
-
-
-      <script> code_snippet();</script>
       <script>
-      var line_eleven = "<div style=\"width: 100%;display: inline-block;position: relative;\">";
-      var line_twelve = "<div id=\"dummy\" style=\"margin-top: 56.25%;\">";
-      var line_thirteen = "<script src=\" + KALTURA_SERVICE_URL + \"\/p\/" + KALTURA_PARTNER_ID + \"\/sp\/" + KALTURA_PARTNER_ID + \"00\/embedIframeJs\/uiconf_id\/" + KALTURA_PARTNER_UI_CONFIG + \"\/partner_id\/" + KALTST_PARTNER_ID +\"><\/script>";
-      var line_forteen = "<div id=\"kaltura_player_1437197987\" style=\"position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;\" itemprop=\"video\" itemscope itemtype=\"http://schema.org/VideoObject\"><\/div><\/div><\/div>";
-
-
-      var line_one = "function (resultit){";
-      var line_two =  "kWidget.embed({";
-      var line_tree = "\"targetId\": \"kaltura_player_1437197987\",";
-      var line_four = "\"wid\": \"_" + KALTURA_PARTNER_ID + "\",";
-      var line_five = "\"uiconf_id\" : \"" + KALTURA_PARTNER_UI_CONFIG + "\",";
-      var line_six = "\"entry_id\" : \"resultit\",";
-      var line_seven = "\"readyCallback\": function( playerId ){ var kdp = $( \"#\" + playerId ).get(0); },";
-      var line_eight = "\"flashvars\":{\"autoPlay\": false},";
-      var line_nine = "\"params\":{\"wmode\": \"transparent\"}";
-      var line_ten = "});};";
-
-      var embedd = line_eleven + line_twelve + line_thirteen + line_forteen + line_one + line_two + line_tree + line_four + line_five + line_six + line_seven+line_eight+line_nine + line_ten;
-
-    var clipboard = new Clipboard('.btncopy', {
-        text: function() { return "<script>" + embedd + "<\/script>";
-      }
-    });
-    clipboard.on('success', function(e) {
-        console.log(e);
-    });
-    clipboard.on('error', function(e) {
-        console.log(e);
-    });
-    </script>
-
-
-
-
-
+      someFunction();
+      
+        function callFunc(elem){
+            document.getElementById(KALTURA_MEDIA_ENTRY_ID).checked = elem.checked;
+        }
+        $(document).ready(function(){
+          formEmbedDropDown();
+        });
+        formEmbedDropDown = function(){
+          $( "#btncopy" ).click(function () {
+            if ( $( "#frm_code_snipet" ).is( ":hidden" ) ) {
+              $( "#frm_code_snipet" ).show( "slow" );
+            } else {
+              $( "#frm_code_snipet" ).hide( "slow" );
+            }
+          });
+        };
+        code_snippet();
+        select_all_text();
+      </script>
     <?php
     if ($_POST['someval']) {
       define(MEDIAENDTRY, $_POST['someval']);

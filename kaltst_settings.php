@@ -31,7 +31,7 @@ function kaltst_integration_settings() {
   <div class="row row_btn_frm_sbm">
     <tr>
       <td><label for="btn_form_sumbmit"><h3>Kaltura Integration Settings</h3></label></td>
-      <td><button type="button" class="btn btn-default btn_form_sumbmit">Show the form</button></td>
+      <td><button type="button" class="btn btn-default btn_form_show">Show the form</button></td>
     </tr>
   </div>
   <div class="clear-fix"></div>

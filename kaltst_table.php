@@ -39,7 +39,6 @@ function kaltst_lst() {
                 </thead>
                 <tbody>
             <?php foreach ($objEntry as $mediaEntry) : ?>
-              <script> var KALTURA_MEDIA_ENTRY_ID = '<?=$mediaEntry->id?>';</script>
                 <tr id="<?php echo $mediaEntry->id ?>">
                         <td class="sometest" style="vertical-align:middle; padding: 2%;"><h5 class="blockquote"><?php echo $mediaEntry->id;?></h5></td>
                         <td style="vertical-align:middle;"><h4 class="blockquote" ><?php echo $mediaEntry->categories;?></h4></td>
@@ -73,7 +72,7 @@ function kaltst_lst() {
   							<div class="callout callout-danger error_message" style="display:none"></div>
 <div class="form-group" id="frm_emebed_code">
   <div style='width: 100%;display: inline-block;position: relative;'>
-    <div id='<?=$mediaEntry->id?>' class='frm_id' style='margin-top: 56.25%;'>
+    <div style='margin-top: 56.25%;'>
       <?php echo "<script src='".KALTST_SERVICE_URL."p/".KALTST_PARTNER_ID."/sp/".KALTST_PARTNER_ID."00/embedIframeJs/uiconf_id/".KALTST_PLAYER_UI_CONFIG."/partner_id/".KALTST_PARTNER_ID."'></script>"; ?>
       <div id='kaltura_player_1437197987' style='position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;' itemprop='video' itemscope itemtype='http://schema.org/VideoObject'>
       </div>
@@ -84,7 +83,7 @@ function kaltst_lst() {
               <form role="form" id="frm_code_snipet">
                 <div class="form-group">
                   <?prettify lang=html linenums=true?>
-                  <pre class="prettyprint" id="quine" style="border:4px solid #88c; white-space: pre-wrap;">
+                  <pre class="wb-prettify" id="quine" style="border:4px solid #88c; white-space: pre-wrap; word-wrap: break-word;">
                   </pre>
                 </div>
               </form>
@@ -100,27 +99,17 @@ function kaltst_lst() {
   		  	</div>
           </form>
   		</div>
-
       <script>
+      var KALTURA_MEDIA_ENTRY_ID = $("#myModal").attr("data_id");
       someFunction();
-      
         function callFunc(elem){
             document.getElementById(KALTURA_MEDIA_ENTRY_ID).checked = elem.checked;
         }
-        $(document).ready(function(){
-          formEmbedDropDown();
+        $(document).ready(function() {
+            $( "#frm_code_snipet" ).is( ":hidden" );
+            formEmbedDropDown();
         });
-        formEmbedDropDown = function(){
-          $( "#btncopy" ).click(function () {
-            if ( $( "#frm_code_snipet" ).is( ":hidden" ) ) {
-              $( "#frm_code_snipet" ).show( "slow" );
-            } else {
-              $( "#frm_code_snipet" ).hide( "slow" );
-            }
-          });
-        };
-        code_snippet();
-        select_all_text();
+          select_all_text();
       </script>
     <?php
     if ($_POST['someval']) {

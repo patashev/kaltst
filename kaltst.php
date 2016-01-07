@@ -7,6 +7,7 @@ Version: 0.1
 */
 require_once(plugin_dir_path( __FILE__ ).'lib/KalturaClient.php');
 require_once(plugin_dir_path( __FILE__ ).'kaltst-uploader.php');
+require_once(plugin_dir_path( __FILE__ ).'kaltst_meta_profile.php');
 require_once(plugin_dir_path( __FILE__ ).'kaltst_table.php');
 include('kaltst_list.php');
 add_action('admin_menu', 'kaltst_plugin_setup_menu');
@@ -34,7 +35,8 @@ function hook_javascript(){
 
 add_action('admin_menu', 'register_my_custom_submenu_page');
 function register_my_custom_submenu_page() {
-	add_submenu_page( 'kaltst', 'Kaltst Plugin List', 'Kaltura List', 'manage_options', 'kaltst-list', 'kaltst_lst');
+	//add_submenu_page( 'kaltst', 'Kaltst Plugin List', 'Kaltura List', 'manage_options', 'kaltst-list', 'kaltst_lst');
+  add_submenu_page( 'kaltst', 'Kaltst Meta Profile', 'Kaltura Meta Profile', 'manage_options', 'kaltura_meta_profile', 'kaltura_meta_profile' );
 }
 function tl_save_error() {
     update_option( 'plugin_error',  ob_get_contents() );

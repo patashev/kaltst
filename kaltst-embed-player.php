@@ -5,7 +5,6 @@ function mh_trip_script( $atts ) {
     $serviceUri = KALTST_SERVICE_URL;
     $partnerr   = KALTST_PARTNER_ID;
     $objectinsertt  = "<script src='".$serviceUri."/p/".$partnerr."/sp/".$partnerr."00/embedIframeJs/uiconf_id/".KALTST_PLAYER_UI_CONFIG."/partner_id/".$partnerr."'></script>
-
     <div id='dummy' style='margin-top: 56.25%;'></div>
 <div id='kaltura_player_1437197987' style='position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;' itemprop='video' itemscope itemtype='http://schema.org/VideoObject'>
 <span itemprop='name' content='URTHBOY - Hellsong'></span>
